@@ -1,0 +1,14 @@
+
+<table class="tableizer-table">
+  <tr class="tableizer-firstrow">
+  	<th>Name</th>
+    <th>Value</th>
+  </tr>
+  <%@fields.each do |field|%>
+		<tr>
+			<td><%=field.name%></td>
+			<td><input id="person_name" name="person[name]" type="text" value="<%=field.default_value%>"/></td>
+			
+		</tr>
+
+	<%end%>
