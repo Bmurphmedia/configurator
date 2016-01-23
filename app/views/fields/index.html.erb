@@ -1,0 +1,48 @@
+<style type="text/css">
+	table.tableizer-table {
+		font-size: 12px;
+		border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
+	} 
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #ccc;
+	}
+	.tableizer-table th {
+		background-color: #104E8B; 
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+<!-- <table class="tableizer-table">
+<tr class="tableizer-firstrow"><th>name</th><th>platform</th><th>query_string_key</th><th>default_value</th></tr>
+ <tr><td>http_host</td><td>Media Resolver</td><td>http_host</td><td>https://mediaresolver-a.akamaihd.net</td></tr>
+ <tr><td>uri</td><td>Media Resolver</td><td>uri</td><td>{uri}</td></tr>
+ <tr><td>format</td><td>Media Resolver</td><td>formatter</td><td>json</td></tr>
+ <tr><td>device</td><td>Media Resolver</td><td>device</td><td>&nbsp;</td></tr>
+ <tr><td>catalogID</td><td>Media Resolver</td><td>catalogID</td><td>&nbsp;</td></tr>
+ <tr><td>appID</td><td>Media Resolver</td><td>appID</td><td></td></tr>
+</table>
+		 -->
+
+
+
+
+<table class="tableizer-table">
+  <tr class="tableizer-firstrow">
+  	<th>Name</th>
+    <th>Platform</th>
+    <th>query_string_key</th>
+    <th>default</th>
+   </tr>
+
+	<%@fields.each do |field|%>
+		<tr>
+			<td><%=field.name%></td>
+			<td><%=field.platform%></td>
+			<td><%=field.query_string_key%></td>
+			<td><%=field.default_value%></td>
+		</tr>
+
+	<%end%>
+</table>

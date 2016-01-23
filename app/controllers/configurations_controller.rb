@@ -1,0 +1,1 @@
+configurations_controller.rb
