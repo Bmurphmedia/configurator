@@ -1,14 +1,28 @@
 
+<!-- Prints form for all existing fields  -->
+
 <table class="tableizer-table">
   <tr class="tableizer-firstrow">
   	<th>Name</th>
     <th>Value</th>
   </tr>
-  <%@fields.each do |field|%>
-		<tr>
-			<td><%=field.name%></td>
-			<td><input id="person_name" name="person[name]" type="text" value="<%=field.default_value%>"/></td>
-			
-		</tr>
+  
+  <%settings = {}%>
+  
+  <%= form_tag("/configurations", method: "Post") do %>
+	 <tr>
+	 	<td>Config Name</td>
+	 	<td><input id="config_name" name="name" type="text" value="Name"/></td>
+	 </tr>
 
+
+	  <%@fields.each do |field|%>
+			<tr>
+				<td><%=field.name%></td>
+				<td><input id="<%=field.name%>" name="data[<%=field.name%>]" type="text" value="<%=field.default_value%>"/></td>
+				
+			</tr>
+		
+		<%end%>
+		<%=submit_tag("submit")%>
 	<%end%>

@@ -33,3 +33,6 @@ Field.create(name: 'Playlist Guid', platform: 'Omniture', query_string_key: 'UMB
 Field.create(name: 'User ID', platform: 'Omniture', query_string_key: 'UMBEPARAMvid', default_value: '{vid}')
 Field.create(name: 'Playlist Title', platform: 'Omniture', query_string_key: 'UMBEPARAMplTitle', default_value: '{playlist_title}')
 Field.create(name: 'Environment', platform: 'Omniture', query_string_key: 'UMBEPARAMenv', default_value: '{env}')
+
+Configuration.create(name: 'test')
+
