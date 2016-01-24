@@ -1,25 +1,25 @@
-class ConfigurationsController < ApplicationController
+class ConfigsController < ApplicationController
 
 
 	def index
-		@configs = Configuration.all
+		@configs = Config.all
 
 	end
 
 	def new
 		@fields = Field.all
-		@config = Configuration.new
+		@config = Config.new
 
 	end
 
 	def create
 		
-		# config_params = params.require[:configuration].permit(:name)
+		# config_params = params.require[:Config].permit(:name)
 		name = params['name']
 
-		redirect_to configurations_path
+		redirect_to Configs_path
 
-		# @config = Configuration.new
+		# @config = Config.new
 		# @config.name = name
 
 		# if @config.save
