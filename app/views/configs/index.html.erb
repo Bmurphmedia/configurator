@@ -2,8 +2,10 @@
 <%@configs.each do |config|%>
 	
 	<%=config.name%>: </br>
+	<%=config.calculated_uri(config.settings, @fields)%></br>
 	<%config.settings.each do |key, value|%>
 		<strong><%=key%>: </strong> <%=value%> </br>
 	<%end%>
+	<%=config.settings%>
 	--------------------</br>
 <%end%>

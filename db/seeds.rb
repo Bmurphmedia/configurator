@@ -6,9 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+settings = {"http_host"=>"https://mediaresolver-a.akamaihd.net", "uri"=>"{uri}", "format"=>"json", "device"=>"AppleTV", "catalogID"=>"4b7e6e11-99a2-4af0-834b-499e0df22226", "appID"=>"ed5f8114-cef6-40de-b205-8502ced048f0", "domain"=>"ViacomSecure ", "ep"=>"27a6bcf5", "ssid"=>"nick_appletv", "Player Profile"=>"82125%3Avmn_unicorn", "Network ID"=>"82125", "Site Section Network ID"=>"82125", "Asset Network ID"=>"82125", "Franchise"=>"{franchise}", "Owner Org"=>"{owner_org}", "Playlist Type"=>"{playlist_type}", "Artist name"=>"{artist_name}", "Application Name"=>"NickAppleTV", "URI"=>"{uri}", "Screen Name"=>"{screen_name}", "Suite"=>"vianickappletvvid", "Playlist Guid"=>"{playlist_guid}", "User ID"=>"{vid}", "Playlist Title"=>"{playlist_title}", "Environment"=>"AppleTV"}
 
-Field.create(name: 'http_host', platform: 'Media Resolver', query_string_key: 'http_host', default_value: 'https://mediaresolver-a.akamaihd.net')
-Field.create(name: 'uri', platform: 'Media Resolver', query_string_key: 'uri', default_value: '{uri}')
+
+Field.create(name: 'http_host', platform: 'Media Resolver', query_string_key: '', default_value: 'https://mediaresolver-a.akamaihd.net')
+Field.create(name: 'uri', platform: 'Media Resolver', query_string_key: '', default_value: '{uri}')
 Field.create(name: 'format', platform: 'Media Resolver', query_string_key: 'formatter', default_value: 'json')
 Field.create(name: 'device', platform: 'Media Resolver', query_string_key: 'device', default_value: '')
 Field.create(name: 'catalogID', platform: 'Media Resolver', query_string_key: 'catalogID', default_value: '')
@@ -34,5 +36,5 @@ Field.create(name: 'User ID', platform: 'Omniture', query_string_key: 'UMBEPARAM
 Field.create(name: 'Playlist Title', platform: 'Omniture', query_string_key: 'UMBEPARAMplTitle', default_value: '{playlist_title}')
 Field.create(name: 'Environment', platform: 'Omniture', query_string_key: 'UMBEPARAMenv', default_value: '{env}')
 
-
+Config.create(name: 'Nick Video', settings: settings)
 
