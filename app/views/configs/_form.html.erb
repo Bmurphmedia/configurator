@@ -9,7 +9,7 @@
   
   <%settings = {}%>
   
-  <%= form_tag("/configurations", method: "Post") do %>
+  <%= form_tag("/configs", method: "Post") do %>
 	 <tr>
 	 	<td>Config Name</td>
 	 	<td><input id="config_name" name="name" type="text" value="Name"/></td>
@@ -19,7 +19,7 @@
 	  <%@fields.each do |field|%>
 			<tr>
 				<td><%=field.name%></td>
-				<td><input id="<%=field.name%>" name="data[<%=field.name%>]" type="text" value="<%=field.default_value%>"/></td>
+				<td><input id="<%=field.name%>" name="settings[<%=field.name%>]" type="text" value="<%=field.default_value%>"/></td>
 				
 			</tr>
 		

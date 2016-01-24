@@ -34,5 +34,5 @@ Field.create(name: 'User ID', platform: 'Omniture', query_string_key: 'UMBEPARAM
 Field.create(name: 'Playlist Title', platform: 'Omniture', query_string_key: 'UMBEPARAMplTitle', default_value: '{playlist_title}')
 Field.create(name: 'Environment', platform: 'Omniture', query_string_key: 'UMBEPARAMenv', default_value: '{env}')
 
-Configuration.create(name: 'test')
+
 

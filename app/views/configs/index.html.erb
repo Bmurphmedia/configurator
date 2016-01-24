@@ -1,2 +1,9 @@
-index.html.erb
-<%=@configs.first.name%>
+
+<%@configs.each do |config|%>
+	
+	<%=config.name%>: </br>
+	<%config.settings.each do |key, value|%>
+		<strong><%=key%>: </strong> <%=value%> </br>
+	<%end%>
+	--------------------</br>
+<%end%>

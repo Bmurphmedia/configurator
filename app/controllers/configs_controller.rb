@@ -9,24 +9,19 @@ class ConfigsController < ApplicationController
 	def new
 		@fields = Field.all
 		@config = Config.new
-
 	end
 
-	def create
-		
-		# config_params = params.require[:Config].permit(:name)
-		name = params['name']
+	def create		
+		config = Config.new
 
-		redirect_to Configs_path
+		config.name = params['name']
+		config.settings = params['settings']
 
-		# @config = Config.new
-		# @config.name = name
-
-		# if @config.save
-		# 	redirect_to configurations_path
-		# else
-			# render :new
-		# end
+		if config.save
+			redirect_to configs_path
+		else
+			render :new
+		end
 	
 	end
 
