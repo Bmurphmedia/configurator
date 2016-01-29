@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129011456) do
+ActiveRecord::Schema.define(version: 20160129012744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brand_platforms", force: :cascade do |t|
+    t.integer  "brand_id"
+    t.integer  "platform_id"
+    t.string   "ep"
+    t.string   "pname"
+    t.string   "suite"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "brand_platforms", ["brand_id"], name: "index_brand_platforms_on_brand_id", using: :btree
+  add_index "brand_platforms", ["platform_id"], name: "index_brand_platforms_on_platform_id", using: :btree
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"

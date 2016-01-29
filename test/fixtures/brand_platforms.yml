@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: 
+  platform: 
+  ep: MyString
+  pname: MyString
+  suite: MyString
+
+two:
+  brand: 
+  platform: 
+  ep: MyString
+  pname: MyString
+  suite: MyString
