@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   root 'fields#index'
 
-  resources :fields
-  resources :configs
+  resources :fields, :configs, :pmt_players
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,5 +1,6 @@
 class Brand < ActiveRecord::Base
-	has_many :configs, :pmt_players
+	has_many :configs
+	has_many :pmt_players
 	has_many :platforms, through: :brand_platforms
 
 	# def initialize(attributes = {})

@@ -1,0 +1,1 @@
+brand_platforms_controller.rb
