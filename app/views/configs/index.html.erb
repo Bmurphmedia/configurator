@@ -1,11 +1,24 @@
 
-<%@configs.each do |config|%>
-	
-	<%=config.name%>: </br>
-	<%=config.calculated_uri(config.settings, @fields)%></br>
-	<%config.settings.each do |key, value|%>
-		<strong><%=key%>: </strong> <%=value%> </br>
+
+<h1>Configurations</h1>
+
+<table class="table">
+  <tr class="tableizer-firstrow">
+  	<th>Name</th>
+  	<th>Mgid</th>
+  	<th>Path</th>
+  	<th>Edit</th>
+   
+  </tr>
+
+	<%@configs.each do |config|%>
+		<tr>
+			<td><%=config.name%> </td>
+			<td><%=config.pmt_player.mgid %> </td>
+			<td><%=config.path%> </td>
+			<td>Button </td>
+		</tr>
+
 	<%end%>
-	<%=config.settings%>
-	--------------------</br>
-<%end%>
+
+</table>

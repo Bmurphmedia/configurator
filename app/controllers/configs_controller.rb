@@ -3,6 +3,7 @@ class ConfigsController < ApplicationController
 
 	def index
 		@configs = Config.all
+		@pmt_players=PmtPlayer.all
 		@fields = Field.all
 
 	end

@@ -2,6 +2,7 @@ class Config < ActiveRecord::Base
 
 	belongs_to :brand
 	belongs_to :platform
+	belongs_to :pmt_player
 
 	serialize :settings
 
