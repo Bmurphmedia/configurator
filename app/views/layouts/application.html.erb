@@ -22,12 +22,15 @@
 <div class="container">
 
 <ul class="nav nav-tabs">
-  <li class=""><%= link_to "Brands", root_path%></li>
-  <li class ""><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
+  <li class="<%if controller_name == 'brands'%>active<%end%>"><%= link_to "Brands", brands_path%></li>
+ 
+  <li class="<%if controller_name == 'platforms'%>active<%end%>"><%= link_to "Platforms", platforms_path%></li>
+ 
+  <li class="<%if controller_name == 'pmt_players'%>active<%end%>"><%= link_to "PMT Players", pmt_players_path%></li>
+  <li class="<%if controller_name == 'configs'%>active<%end%>"><%= link_to "Configs", configs_path%></li>
 </ul>
 	<%= yield %>
-	<%= "#{controller_name}/#{action_name}" %>
+<!-- 	<%= "#{controller_name}/#{action_name}" %> -->
 </div>
 
 </body>

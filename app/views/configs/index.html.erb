@@ -2,6 +2,12 @@
 
 <h1>Configurations</h1>
 
+MTV prod embed
+
+
+<!-- cmt.com embed -->
+<!-- <iframe src="http://media.mtvnservices.com/embed/mgid:uma:videolist:cmt.com:1739264/cp~instance%3Dfullepisode%26autoPlay%3Dfalse%26id%3D1739264%26uri%3Dmgid%3Auma%3Avideolist%3Acmt.com%3A1739264" width="512" height="288" frameborder="0"></iframe> -->
+
 <table class="table">
   <tr class="tableizer-firstrow">
   	<th>Name</th>
@@ -16,7 +22,12 @@
 			<td><%=config.name%> </td>
 			<td><%=config.pmt_player.mgid %> </td>
 			<td><%=config.path%> </td>
-			<td>Button </td>
+			<td>
+				<%= link_to "Edit", configs_path%>
+
+			</td>
+		
+
 		</tr>
 
 	<%end%>

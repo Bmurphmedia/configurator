@@ -1,0 +1,25 @@
+<table class="table">
+  <tr class="tableizer-firstrow">
+  	<th>Name</th>
+  	<th>device</th>
+  	<th>env</th>
+  	<th>Edit</th>
+   
+  </tr>
+
+	<%@platforms.each do |platform|%>
+		<tr>
+			<td><%=platform.name%> </td>
+			<td><%=platform.device %> </td>
+			<td><%=platform.env%> </td>
+			<td>
+				<%= link_to "Platforms", platforms_path%>
+
+			</td>
+		
+
+		</tr>
+
+	<%end%>
+
+</table>
