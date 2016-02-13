@@ -1,1 +1,10 @@
-brand_platforms_controller.rb
+class BrandPlatformsController < ApplicationController
+
+	def index
+
+
+	end
+	
+
+
+end

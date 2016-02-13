@@ -3,6 +3,7 @@
 <table class="table">
   <tr >
   	<th>Name</th>
+  	<th></th>
   	<th>Owner</th>
   	<th>Edit</th>
    
@@ -10,7 +11,9 @@
 
 	<%@brands.each do |brand|%>
 		<tr>
-			<td><%=brand.name%> </td>
+		
+			<td><%= link_to brand.name, [brand, :brand_platforms]%></td>
+			
 			<td><%=brand.owner%> </td>
 				<td>Button </td>
 		</tr>
