@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131223606) do
+ActiveRecord::Schema.define(version: 20160214195706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,15 +39,17 @@ ActiveRecord::Schema.define(version: 20160131223606) do
   create_table "configs", force: :cascade do |t|
     t.string   "name"
     t.string   "path"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.text     "settings"
     t.integer  "brand_id"
     t.integer  "platform_id"
     t.integer  "pmt_player_id"
+    t.integer  "brand_platform_id"
   end
 
   add_index "configs", ["brand_id"], name: "index_configs_on_brand_id", using: :btree
+  add_index "configs", ["brand_platform_id"], name: "index_configs_on_brand_platform_id", using: :btree
   add_index "configs", ["platform_id"], name: "index_configs_on_platform_id", using: :btree
   add_index "configs", ["pmt_player_id"], name: "index_configs_on_pmt_player_id", using: :btree
 
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160131223606) do
 
   add_index "pmt_players", ["brand_id"], name: "index_pmt_players_on_brand_id", using: :btree
 
+  add_foreign_key "configs", "brand_platforms"
   add_foreign_key "configs", "brands"
   add_foreign_key "configs", "platforms"
   add_foreign_key "configs", "pmt_players"

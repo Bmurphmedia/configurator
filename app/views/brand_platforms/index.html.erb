@@ -1,1 +1,47 @@
-index.html.erb
+<h1><%=@brand.name%>: Platforms</h1>
+<h3>Pick a Platorm</h3>
+
+<table class="table">
+ <tr>
+  	<th></th>
+  	<th>Platform Params</th>
+  	<th></th>
+  	<th></th>
+  	<th></th>
+  	<th>Brand Platform Params</th>
+
+  </tr>
+
+
+  <tr >
+  
+  	<th>Platforms</th>
+  	<th>name</th>
+  	<th>device</th>
+  	<th>env</th>
+
+   
+  </tr>
+ 
+		<tr>
+				
+			<%@brand_platforms.each do |bp|%>	
+				<%@platforms.each do |platform|%>
+					
+					<td>
+						<%=platform.name%>
+
+					</td>
+
+				<%end%>
+			<%end%>
+		
+		
+
+		
+			
+		</tr>
+
+
+
+</table>
