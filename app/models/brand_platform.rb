@@ -1,6 +1,8 @@
 class BrandPlatform < ActiveRecord::Base
 
-	# belongs_to :brand, :platform 
+	#not sure why breaking things 
+	# belongs_to :brand,
+	belongs_to :platform 
 
-	# has_many :configs
+	has_many :configs
 end

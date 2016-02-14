@@ -5,13 +5,16 @@ class BrandPlatformsController < ApplicationController
 		
 		@brand_platforms = @brand.brand_platforms
 		
-		@platforms = []
 
-		@brand_platforms.each do |bp|
 
-			@platforms << Platform.find(bp.platform_id)
+		#Some code incase platform is needed here
+		# @platforms = []
 
-		end
+		# @brand_platforms.each do |bp|
+
+		# 	@platforms << Platform.find(bp.platform_id)
+
+		# end
 
 
 	end

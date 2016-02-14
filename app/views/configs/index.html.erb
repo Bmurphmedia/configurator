@@ -6,26 +6,39 @@
 <h1>Configs</h1>
 
 <table class="table">
-  <tr class="tableizer-firstrow">
-  	<th>Name</th>
-  	<th>Mgid</th>
-  	<th>Path</th>
-  	<th>Edit</th>
-   
-  </tr>
+  <%@pmt_players.each do |pmt_player|%>
+  	 <tr >
+	  	<th>Mgid</th>
+	  	<th>Catalog</th>
+		 </tr>
+		 <tr >
+	  	<td><%=pmt_player.mgid%></td>
+	  	<td><%=pmt_player.catalog_id%></td>
+		 </tr>
 
-	<%@configs.each do |config|%>
-		<tr>
-			<td><%=config.name%> </td>
-			<td><%=config.pmt_player.mgid %> </td>
-			<td><%=config.path%> </td>
-			<td>
-				<%= link_to "Edit", configs_path%>
 
-			</td>
-		
 
-		</tr>
+		<%@configs.each do |config|%>
+			
+		  <tr >
+		  	<th>------</th>
+		 
+		  	<th>Path</th>
+		  	<th>Edit</th> 
+		  </tr>
+
+			<tr>
+				<td></td>
+				<td><%=config.path%> </td>
+				<td>
+					<%= link_to "Edit", configs_path%>
+
+				</td>
+			
+
+			</tr>
+
+		<%end%>
 
 	<%end%>
 

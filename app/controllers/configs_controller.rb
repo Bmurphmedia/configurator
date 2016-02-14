@@ -2,8 +2,18 @@ class ConfigsController < ApplicationController
 
 
 	def index
-		@configs = Config.all
-		@pmt_players=PmtPlayer.all
+
+		@brand_platform = BrandPlatform.find(params[:brand_platform_id])
+		
+		@configs = @brand_platform.configs
+		
+		#Code in case PMT players are needed
+		@pmt_players = []
+
+		@configs.each do |config|
+			@pmt_players << PmtPlayer.find(config.pmt_player_id)
+		end
+
 		@fields = Field.all
 
 	end

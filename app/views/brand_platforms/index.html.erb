@@ -26,14 +26,17 @@
 		<tr>
 				
 			<%@brand_platforms.each do |bp|%>	
-				<%@platforms.each do |platform|%>
-					
+			
 					<td>
-						<%=platform.name%>
+						
+					<%= link_to bp.platform.name, [bp, :configs]%>
 
 					</td>
+						
 
-				<%end%>
+					
+
+	
 			<%end%>
 		
 		
