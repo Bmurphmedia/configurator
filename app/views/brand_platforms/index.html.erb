@@ -7,7 +7,7 @@
   	<th>Platform Params</th>
   	<th></th>
   	<th></th>
-  	<th></th>
+  	
   	<th>Brand Platform Params</th>
 
   </tr>
@@ -20,6 +20,10 @@
   	<th>device</th>
   	<th>env</th>
 
+  	<th>ep</th>
+  	<th>pname</th>
+  	<th>suite</th>
+
    
   </tr>
  
@@ -27,11 +31,15 @@
 				
 			<%@brand_platforms.each do |bp|%>	
 			
-					<td>
-						
-					<%= link_to bp.platform.name, [bp, :configs]%>
+				<td><%= link_to bp.platform.name, [bp, :configs]%></td>
+				<td><%=bp.platform.name%></td>
+				<td><%=bp.platform.device%></td>
+				<td><%=bp.platform.env%></td>
 
-					</td>
+				<td><%=bp.ep%></td>
+				<td><%=bp.pname%></td>
+				<td><%=bp.suite%></td>
+
 						
 
 					

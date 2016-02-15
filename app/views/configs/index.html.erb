@@ -3,33 +3,31 @@
 
 <!-- cmt.com embed -->
 <!-- <iframe src="http://media.mtvnservices.com/embed/mgid:uma:videolist:cmt.com:1739264/cp~instance%3Dfullepisode%26autoPlay%3Dfalse%26id%3D1739264%26uri%3Dmgid%3Auma%3Avideolist%3Acmt.com%3A1739264" width="512" height="288" frameborder="0"></iframe> -->
-<h1>Configs</h1>
-
+<h1><%="#{@brand_platform.brand.name}: #{@brand_platform.platform.name}: "  %>Configs</h1>
+<h3>Pick a config</h3>
 <table class="table">
-  <%@pmt_players.each do |pmt_player|%>
+ 
+  	 <tr >
+	  	<th></th>
+	  	<th></th>
+	  	<th>Player Params</th>
+	  	<th>Config Params</th>
+		 </tr>
+
   	 <tr >
 	  	<th>Mgid</th>
-	  	<th>Catalog</th>
+	  	<th>Path</th>
+	  	<th>Catalog ID</th>
 		 </tr>
-		 <tr >
-	  	<td><%=pmt_player.mgid%></td>
-	  	<td><%=pmt_player.catalog_id%></td>
-		 </tr>
-
-
+	
 
 		<%@configs.each do |config|%>
 			
-		  <tr >
-		  	<th>------</th>
-		 
-		  	<th>Path</th>
-		  	<th>Edit</th> 
-		  </tr>
-
+	
 			<tr>
-				<td></td>
+				<td><%=config.pmt_player.mgid%></td>
 				<td><%=config.path%> </td>
+				<td><%=config.pmt_player.catalog_id%> </td>
 				<td>
 					<%= link_to "Edit", configs_path%>
 
@@ -40,6 +38,6 @@
 
 		<%end%>
 
-	<%end%>
+	
 
 </table>

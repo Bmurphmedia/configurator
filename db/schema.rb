@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214195706) do
+ActiveRecord::Schema.define(version: 20160215004845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,9 +81,19 @@ ActiveRecord::Schema.define(version: 20160214195706) do
 
   add_index "pmt_players", ["brand_id"], name: "index_pmt_players_on_brand_id", using: :btree
 
+  create_table "recommendations", force: :cascade do |t|
+    t.string   "overrides"
+    t.integer  "config_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "recommendations", ["config_id"], name: "index_recommendations_on_config_id", using: :btree
+
   add_foreign_key "configs", "brand_platforms"
   add_foreign_key "configs", "brands"
   add_foreign_key "configs", "platforms"
   add_foreign_key "configs", "pmt_players"
   add_foreign_key "pmt_players", "brands"
+  add_foreign_key "recommendations", "configs"
 end

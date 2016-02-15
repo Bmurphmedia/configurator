@@ -5,6 +5,8 @@ class Config < ActiveRecord::Base
 	belongs_to :pmt_player
 	belongs_to :brand_platform
 
+	has_many :recommendations
+
 	serialize :settings
 
 	def calculated_uri(settings, fields)

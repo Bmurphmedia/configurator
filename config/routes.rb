@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   end
 
   resources :brand_platforms do
-    resources :configs
+    resources :configs  
   end
 
+  resources :configs do 
+    resources :recommendations
+
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

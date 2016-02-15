@@ -1,0 +1,32 @@
+<table class="tableizer-table">
+  <tr class="tableizer-firstrow">
+  	<th>Name</th>
+    <th>Value</th>
+  </tr>
+  
+  <%settings = {}%>
+  
+  <%= form_tag("/configs", method: "Post") do %>
+	 <tr>
+	 	<td>Config Name</td>
+	 	<td><input id="config_name" name="name" type="text" value="Name"/></td>
+	 </tr>
+
+
+	  <%@fields.each do |field|%>
+	  	<%default = @defaults[field.name]%>
+			<%unless default%>
+				<%default = field.default_value%>
+			<%end%>
+
+			<tr>
+				<td><%=field.name%></td>
+				<td><input id="<%=field.name%>" name="settings[<%=field.name%>]" type="text" value="<%=default%>"/> 
+
+				</td>
+				
+			</tr>
+		
+		<%end%>
+		<%=submit_tag("submit")%>
+	<%end%>

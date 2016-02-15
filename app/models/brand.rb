@@ -9,4 +9,15 @@ class Brand < ActiveRecord::Base
  #  	@owner= attributes[:owner]
 	# end
 
+
+	def get_defaults
+		defaults = {}
+
+		defaults['Owner Org'] = self.owner
+
+		return defaults 
+
+
+	end
+
 end
