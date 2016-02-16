@@ -5,7 +5,7 @@ class FieldsController < ApplicationController
 	end
 
 	def new
-		@field = fideo.new
+		@field = Field.new
 	end
 
 	def create
