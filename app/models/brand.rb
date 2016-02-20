@@ -3,6 +3,7 @@ class Brand < ActiveRecord::Base
 	has_many :pmt_players
 	has_many :platforms
 	has_many :brand_platforms
+	belongs_to :brand_group
 
 	# def initialize(attributes = {})
  #   	@name = attributes[:name]

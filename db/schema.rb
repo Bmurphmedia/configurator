@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215004845) do
+ActiveRecord::Schema.define(version: 20160220204616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brand_groups", force: :cascade do |t|
+    t.string   "name"
+    t.string   "catalog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "brand_platforms", force: :cascade do |t|
     t.integer  "brand_id"
@@ -24,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160215004845) do
     t.string   "suite"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "ssid"
   end
 
   add_index "brand_platforms", ["brand_id"], name: "index_brand_platforms_on_brand_id", using: :btree
@@ -32,9 +40,12 @@ ActiveRecord::Schema.define(version: 20160215004845) do
   create_table "brands", force: :cascade do |t|
     t.string   "name"
     t.string   "owner"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "brand_group_id"
   end
+
+  add_index "brands", ["brand_group_id"], name: "index_brands_on_brand_group_id", using: :btree
 
   create_table "configs", force: :cascade do |t|
     t.string   "name"
@@ -72,7 +83,6 @@ ActiveRecord::Schema.define(version: 20160215004845) do
 
   create_table "pmt_players", force: :cascade do |t|
     t.string   "mgid"
-    t.string   "catalog_id"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -90,6 +100,7 @@ ActiveRecord::Schema.define(version: 20160215004845) do
 
   add_index "recommendations", ["config_id"], name: "index_recommendations_on_config_id", using: :btree
 
+  add_foreign_key "brands", "brand_groups"
   add_foreign_key "configs", "brand_platforms"
   add_foreign_key "configs", "brands"
   add_foreign_key "configs", "platforms"
