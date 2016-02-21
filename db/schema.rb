@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220204616) do
+ActiveRecord::Schema.define(version: 20160221005738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.string   "app_id"
+    t.string   "video_type"
+    t.integer  "platform_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "applications", ["platform_id"], name: "index_applications_on_platform_id", using: :btree
 
   create_table "brand_groups", force: :cascade do |t|
     t.string   "name"
@@ -100,6 +110,7 @@ ActiveRecord::Schema.define(version: 20160220204616) do
 
   add_index "recommendations", ["config_id"], name: "index_recommendations_on_config_id", using: :btree
 
+  add_foreign_key "applications", "platforms"
   add_foreign_key "brands", "brand_groups"
   add_foreign_key "configs", "brand_platforms"
   add_foreign_key "configs", "brands"
