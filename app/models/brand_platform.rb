@@ -16,4 +16,17 @@ class BrandPlatform < ActiveRecord::Base
 
 	end
 
+
+	def rec
+		hash = {}
+		unless !self.ep
+			hash['ep'] = self.ep
+		end
+		hash['pname'] = self.pname
+		hash['suite'] = self.suite
+
+
+		return hash
+	end
+
 end

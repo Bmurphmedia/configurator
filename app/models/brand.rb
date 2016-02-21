@@ -10,7 +10,8 @@ class Brand < ActiveRecord::Base
  #  	@owner= attributes[:owner]
 	# end
 
-
+	# passing a hash with defaults based on current fields db
+	#Probably should go away in favor of reccomendation
 	def get_defaults
 		defaults = {}
 
@@ -19,6 +20,11 @@ class Brand < ActiveRecord::Base
 		return defaults 
 
 
+	end
+
+	# Make a recommendation available
+	def rec
+		return {'owner' => self.owner}
 	end
 
 end
